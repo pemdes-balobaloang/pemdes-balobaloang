@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monografi Desa - Balo Baloang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .card-monografi { @apply bg-white p-6 rounded-[2.5rem] shadow-xl border-b-8 transition-transform hover:scale-[1.02]; }
+        .table-mono { @apply w-full text-left text-xs; }
+        .table-mono th { @apply py-3 px-4 bg-gray-50 uppercase tracking-widest font-black text-blue-900 border-b; }
+        .table-mono td { @apply py-3 px-4 border-b border-gray-100 font-bold text-gray-700; }
+        .badge-pulau { @apply px-2 py-1 rounded-md text-[9px] font-black uppercase tracking-tighter; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-white shadow-md sticky top-0 z-[100] border-b-4 border-blue-900">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="logo-pangkep.png" alt="Logo" class="h-10 w-auto">
+                <h1 class="text-lg font-black text-blue-900 uppercase tracking-tighter">Desa Balo Baloang</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-gray-500 font-bold text-[10px] uppercase hover:text-blue-900">Beranda</a>
+                <a href="visi-misi.html" class="text-gray-500 font-bold text-[10px] uppercase hover:text-blue-900">Visi Misi</a>
+                <a href="struktur.html" class="text-gray-500 font-bold text-[10px] uppercase hover:text-blue-900">Struktur</a>
+                <a href="monografi.html" class="text-blue-600 font-bold text-[10px] uppercase border-b-2 border-blue-600">Monografi</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-blue-900 text-white py-16 px-4 text-center">
+        <h2 class="text-4xl font-black uppercase italic tracking-tighter">Monografi Desa</h2>
+        <p class="text-blue-200 text-xs mt-3 font-bold uppercase tracking-[0.3em]">Data Statistik & Geografis Tahun 2026</p>
+    </header>
+
+    <section class="py-10 px-4 -mt-10">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-3xl shadow-xl border-l-8 border-yellow-500 flex items-center space-x-4">
+                    <div class="bg-yellow-100 p-4 rounded-2xl text-yellow-600 text-2xl"><i class="fas fa-map-marked-alt"></i></div>
+                    <div>
+                        <h4 class="font-black text-blue-900 uppercase text-[10px] tracking-widest mb-1 italic">Gugusan Kepulauan</h4>
+                        <p class="text-sm text-gray-700 font-bold leading-tight">Terdiri dari <span class="text-blue-900 text-lg underline">11 Pulau</span></p>
+                        <div class="flex space-x-3 mt-1">
+                            <span class="text-[9px] font-black uppercase text-green-600">5 Berpenghuni</span>
+                            <span class="text-[9px] font-black uppercase text-red-500">6 Tak Berpenghuni</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue-950 p-6 rounded-3xl shadow-xl border-l-8 border-blue-400 flex items-center space-x-4 text-white">
+                    <div class="bg-blue-900 p-4 rounded-2xl text-blue-400 text-2xl"><i class="fas fa-th-large"></i></div>
+                    <div>
+                        <h4 class="font-black text-blue-300 uppercase text-[10px] tracking-widest mb-1 italic">Wilayah Administratif</h4>
+                        <p class="text-sm font-bold leading-tight">Terbagi ke dalam <span class="text-blue-400 text-lg">4 Wilayah Dusun</span></p>
+                        <p class="text-[9px] font-medium text-blue-200 uppercase mt-1 tracking-widest italic text-center md:text-left">Pusat Desa: Pulau Balo Baloang</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-gray-100 mb-12">
+                <h4 class="font-black text-blue-900 uppercase text-xs tracking-widest mb-8 text-center italic border-b pb-4">Pembagian Wilayah Administrasi Pulau</h4>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-5 rounded-2xl border-l-4 border-blue-900 transition-hover hover:shadow-md">
+                        <h5 class="text-blue-900 font-black text-[10px] uppercase mb-3 flex justify-between">
+                            Dusun Balo Baloang <span>(Pusat)</span>
+                        </h5>
+                        <ul class="text-xs font-bold text-gray-700 space-y-2">
+                            <li class="flex items-center text-green-600"><i class="fas fa-home mr-2 text-[10px]"></i> P. Balo Baloang</li>
+                            <li class="flex items-center text-green-600"><i class="fas fa-home mr-2 text-[10px]"></i> P. Balo Baloang Caddi</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-5 rounded-2xl border-l-4 border-yellow-500 transition-hover hover:shadow-md">
+                        <h5 class="text-yellow-600 font-black text-[10px] uppercase mb-3">Dusun Sumanga</h5>
+                        <ul class="text-xs font-bold text-gray-700 space-y-2">
+                            <li class="flex items-center text-green-600"><i class="fas fa-home mr-2 text-[10px]"></i> P. Sumanga</li>
+                            <li class="flex items-center text-red-400"><i class="fas fa-anchor mr-2 text-[10px]"></i> P. Sanipa (Tak Berpenghuni)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-5 rounded-2xl border-l-4 border-green-600 md:row-span-1 transition-hover hover:shadow-md">
+                        <h5 class="text-green-700 font-black text-[10px] uppercase mb-3">Dusun Pelokang</h5>
+                        <ul class="text-xs font-bold text-gray-700 space-y-2">
+                            <li class="flex items-center text-green-600"><i class="fas fa-home mr-2 text-[10px]"></i> P. Pelokang</li>
+                            <li class="flex items-center text-red-400"><i class="fas fa-anchor mr-2 text-[10px]"></i> P. Manukang (Tak Berpenghuni)</li>
+                            <li class="flex items-center text-red-400"><i class="fas fa-anchor mr-2 text-[10px]"></i> P. Sadolangan (Tak Berpenghuni)</li>
+                            <li class="flex items-center text-red-400"><i class="fas fa-anchor mr-2 text-[10px]"></i> P. Sarege (Tak Berpenghuni)</li>
+                            <li class="flex items-center text-red-400"><i class="fas fa-anchor mr-2 text-[10px]"></i> P. Pelokang Caddi (Tak Berpenghuni)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-5 rounded-2xl border-l-4 border-blue-400 transition-hover hover:shadow-md">
+                        <h5 class="text-blue-500 font-black text-[10px] uppercase mb-3">Dusun Langkoitang</h5>
+                        <ul class="text-xs font-bold text-gray-700 space-y-2">
+                            <li class="flex items-center text-green-600"><i class="fas fa-home mr-2 text-[10px]"></i> P. Langkoitang</li>
+                            <li class="flex items-center text-red-400"><i class="fas fa-anchor mr-2 text-[10px]"></i> P. Bangkobangkoang (Tak Berpenghuni)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="relative overflow-hidden group bg-gradient-to-br from-green-50 to-white p-8 rounded-[2.5rem] border-2 border-green-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-dove text-8xl text-green-600"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-600 text-white text-[10px] font-black uppercase tracking-widest mb-6 shadow-lg">
+                                <i class="fas fa-leaf mr-2"></i> Konservasi Alam
+                            </div>
+                            <h5 class="text-2xl font-black text-green-900 mb-3 tracking-tighter">Pulau Sarege <span class="text-green-600 italic block text-lg font-bold mt-1">(Pulau Burung)</span></h5>
+                            <p class="text-xs text-green-800 leading-relaxed font-bold italic">
+                                "Habitat asli dari satwa langka <span class="text-green-600 underline decoration-2 underline-offset-4 font-black">Merpati Emas (Caloenas nicobarica)</span>. Pulau ini merupakan benteng pertahanan terakhir bagi ekosistem burung langka di wilayah administrasi Dusun Pelokang."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative overflow-hidden group bg-gradient-to-br from-blue-50 to-white p-8 rounded-[2.5rem] border-2 border-blue-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-umbrella-beach text-8xl text-blue-600"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest mb-6 shadow-lg">
+                                <i class="fas fa-star mr-2"></i> Destinasi Alami
+                            </div>
+                            <h5 class="text-2xl font-black text-blue-900 mb-3 tracking-tighter">Pulau Bangkobangkoang <span class="text-blue-600 italic block text-lg font-bold mt-1">(The White Sand)</span></h5>
+                            <p class="text-xs text-blue-800 leading-relaxed font-bold italic">
+                                "Terletak di wilayah Dusun Langkoitang, pulau ini menyimpan pesona <span class="text-blue-600 underline decoration-2 underline-offset-4 font-black">Pasir Putih alami yang sangat halus</span> dengan kejernihan air laut yang memukau, menjadikannya permata tersembunyi di Desa Balo Baloang."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12 text-center">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border-b-8 border-blue-500">
+                    <i class="fas fa-users text-blue-500 text-3xl mb-3"></i>
+                    <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest">Total Jiwa</p>
+                    <h3 class="text-3xl font-black text-gray-800">1.960</h3>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl border-b-8 border-pink-500">
+                    <i class="fas fa-venus text-pink-500 text-3xl mb-3"></i>
+                    <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest">Perempuan</p>
+                    <h3 class="text-3xl font-black text-gray-800">970</h3>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl border-b-8 border-blue-700 col-span-2 md:col-span-1">
+                    <i class="fas fa-mars text-blue-700 text-3xl mb-3"></i>
+                    <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest">Laki-Laki</p>
+                    <h3 class="text-3xl font-black text-gray-800">990</h3>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-gray-100 mb-12">
+                <div class="bg-blue-950 px-8 py-5 flex justify-between items-center">
+                    <h4 class="font-black text-white uppercase text-xs tracking-widest italic">Rincian Per Dusun</h4>
+                    <span class="bg-yellow-500 text-blue-900 text-[9px] font-black px-3 py-1 rounded-full uppercase">Update 2026</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-gray-100 text-blue-900 uppercase text-[10px] font-black tracking-widest border-b">
+                                <th class="px-8 py-5 text-center">No</th>
+                                <th class="px-8 py-5">Wilayah Dusun</th>
+                                <th class="px-8 py-5 text-center">Laki-Laki</th>
+                                <th class="px-8 py-5 text-center">Perempuan</th>
+                                <th class="px-8 py-5 text-center bg-blue-50">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 text-sm font-bold">
+                            <tr><td class="px-8 py-5 text-center border-b">01</td><td class="px-8 py-5 font-black text-blue-900 border-b">Dusun Balo Baloang</td><td class="px-8 py-5 text-center border-b">260</td><td class="px-8 py-5 text-center border-b">250</td><td class="px-8 py-5 text-center bg-blue-50 font-black border-b">510</td></tr>
+                            <tr><td class="px-8 py-5 text-center border-b">02</td><td class="px-8 py-5 font-black text-blue-900 border-b">Dusun Sumanga</td><td class="px-8 py-5 text-center border-b">501</td><td class="px-8 py-5 text-center border-b">541</td><td class="px-8 py-5 text-center bg-blue-50 font-black border-b">490</td></tr>
+                            <tr><td class="px-8 py-5 text-center border-b">03</td><td class="px-8 py-5 font-black text-blue-900 border-b">Dusun Pelokang</td><td class="px-8 py-5 text-center border-b">280</td><td class="px-8 py-5 text-center border-b">290</td><td class="px-8 py-5 text-center bg-blue-50 font-black border-b">485</td></tr>
+                            <tr><td class="px-8 py-5 text-center border-b">04</td><td class="px-8 py-5 font-black text-blue-900 border-b">Dusun Langkoitang</td><td class="px-8 py-5 text-center border-b">444</td><td class="px-8 py-5 text-center border-b">430</td><td class="px-8 py-5 text-center bg-blue-50 font-black border-b">475</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-monografi border-blue-900">
+                    <div class="flex items-center space-x-3 mb-6"><i class="fas fa-graduation-cap text-2xl text-blue-900"></i><h4 class="font-black uppercase text-xs tracking-widest text-blue-900">Pendidikan</h4></div>
+                    <table class="table-mono">
+                        <tr><td>Tamat SD</td><td class="text-right">--</td></tr>
+                        <tr><td>Tamat SMP</td><td class="text-right">--</td></tr>
+                        <tr><td>Tamat SMA</td><td class="text-right">--</td></tr>
+                        <tr><td>Sarjana</td><td class="text-right">--</td></tr>
+                    </table>
+                </div>
+                <div class="card-monografi border-yellow-500">
+                    <div class="flex items-center space-x-3 mb-6"><i class="fas fa-briefcase text-2xl text-yellow-500"></i><h4 class="font-black uppercase text-xs tracking-widest text-yellow-500">Pekerjaan</h4></div>
+                    <table class="table-mono">
+                        <tr><td>Petani</td><td class="text-right">--</td></tr>
+                        <tr><td>Nelayan</td><td class="text-right">--</td></tr>
+                        <tr><td>Pedagang</td><td class="text-right">--</td></tr>
+                        <tr><td>Lainnya</td><td class="text-right">--</td></tr>
+                    </table>
+                </div>
+                <div class="card-monografi border-green-600">
+                    <div class="flex items-center space-x-3 mb-6"><i class="fas fa-map-marker-alt text-2xl text-green-600"></i><h4 class="font-black uppercase text-xs tracking-widest text-green-600">Luas Wilayah</h4></div>
+                    <table class="table-mono">
+                        <tr><td>Pemukiman</td><td class="text-right">-- Ha</td></tr>
+                        <tr><td>Kebun/Hutan</td><td class="text-right">-- Ha</td></tr>
+                        <tr class="bg-green-50 font-black italic"><td>Total Luas</td><td class="text-right">-- Ha</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-950 text-white py-12 border-t-8 border-yellow-500 mt-12 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+                <h5 class="text-yellow-500 font-black uppercase text-xs tracking-[0.3em] mb-4 italic">Pemerintah Desa Balo Baloang</h5>
+                <p class="text-xs font-bold leading-relaxed mb-4">
+                    Kecamatan Liukang Tangaya, Kabupaten Pangkajene dan Kepulauan<br>
+                    Provinsi Sulawesi Selatan.
+                </p>
+                <div class="flex items-start space-x-3 text-blue-300">
+                    <i class="fas fa-map-marker-alt mt-1"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest leading-relaxed">
+                        Alamat: Pulau Balo Baloang, Kode Pos 90673
+                    </p>
+                </div>
+            </div>
+            <div class="md:text-right flex flex-col md:items-end justify-center">
+                <p class="text-[9px] text-blue-400 font-bold uppercase tracking-widest mb-2 italic">Dikelola oleh Sekretariat Desa Balo Baloang</p>
+                <p class="text-[9px] text-gray-500 font-bold uppercase tracking-widest">© 2026 Hak Cipta Terpelihara</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

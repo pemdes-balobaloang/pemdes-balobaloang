@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Transparansi Anggaran - Balo Baloang</title>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow py-3 px-6 flex justify-between items-center sticky top-0 z-50">
+        <h1 class="font-bold text-blue-900 uppercase">Desa Balo Baloang</h1>
+        <ul class="flex space-x-4 text-[10px] font-bold uppercase">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="transparansi.html" class="text-blue-600">Anggaran</a></li>
+        </ul>
+    </nav>
+
+    <section class="py-16 container mx-auto px-4 max-w-5xl">
+        <h2 class="text-3xl font-black text-blue-900 mb-4 uppercase italic">Transparansi APBDes</h2>
+        <p class="text-gray-500 mb-10 font-bold uppercase tracking-widest text-xs">Laporan Realisasi Anggaran Tahun 2025</p>
+        
+        <div class="grid md:grid-cols-3 gap-6 mb-12 text-center">
+            <div class="bg-green-600 text-white p-6 rounded-xl">
+                <h4 class="text-xs uppercase opacity-80">Pendapatan Desa</h4>
+                <p class="text-2xl font-bold">Rp 1.250.000.000</p>
+            </div>
+            <div class="bg-blue-600 text-white p-6 rounded-xl">
+                <h4 class="text-xs uppercase opacity-80">Belanja Desa</h4>
+                <p class="text-2xl font-bold">Rp 1.100.000.000</p>
+            </div>
+            <div class="bg-yellow-500 text-white p-6 rounded-xl">
+                <h4 class="text-xs uppercase opacity-80">Surplus/Silpa</h4>
+                <p class="text-2xl font-bold">Rp 150.000.000</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-gray-800 text-white text-xs uppercase">
+                    <tr><th class="px-6 py-4">Bidang Pelaksanaan</th><th class="px-6 py-4 text-right">Anggaran</th></tr>
+                </thead>
+                <tbody class="divide-y text-sm">
+                    <tr><td class="px-6 py-4">Penyelenggaraan Pemerintahan</td><td class="px-6 py-4 text-right font-bold">Rp 450.000.000</td></tr>
+                    <tr><td class="px-6 py-4">Pembangunan Infrastruktur</td><td class="px-6 py-4 text-right font-bold">Rp 500.000.000</td></tr>
+                    <tr><td class="px-6 py-4">Pemberdayaan Masyarakat</td><td class="px-6 py-4 text-right font-bold">Rp 150.000.000</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>
