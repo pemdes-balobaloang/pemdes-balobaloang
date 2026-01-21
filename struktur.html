@@ -5,14 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Struktur Organisasi - Desa Balo Baloang</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .node-container { border: 1px solid #444; background: linear-gradient(to bottom, #ffffff 0%, #d1d5db 100%); padding: 8px; width: 130px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); margin: 0 auto; border-radius: 4px; transition: all 0.3s ease; }
-        .clickable:hover { transform: scale(1.05); border-color: #1e3a8a; box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.4); }
-        .photo-frame { width: 70px; height: 85px; background-color: #cbd5e1; margin: 0 auto 6px auto; border: 1px solid #999; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #475569; font-weight: bold; }
+        
+        .node-container { 
+            border: 1px solid #444; 
+            background: linear-gradient(to bottom, #ffffff 0%, #d1d5db 100%); 
+            padding: 8px; 
+            width: 130px; 
+            text-align: center; 
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1); 
+            margin: 0 auto; 
+            border-radius: 4px; 
+            transition: all 0.3s ease; 
+        }
+
+        .kades-container { 
+            width: 200px !important; 
+            border: 2.5px solid #1e3a8a !important; 
+            background: #fff !important;
+        }
+
+        .clickable:hover { transform: scale(1.05); border-color: #1e3a8a; }
+
+        .photo-frame { 
+            width: 75px; 
+            height: 95px; 
+            background-color: #cbd5e1; 
+            margin: 0 auto 6px auto; 
+            border: 1px solid #999; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+
+        /* Pengaturan Foto agar Pas & Zoom */
+        .img-fit {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transform: scale(1.1);
+        }
+
+        .img-zoom-kades {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 10%; 
+            transform: scale(1.3); 
+        }
+
         .label-jabatan { font-size: 8px; font-weight: bold; text-transform: uppercase; color: #000; margin-bottom: 3px; line-height: 1.1; }
         .label-nama { font-size: 9px; font-weight: bold; color: #1e3a8a; border-top: 1px solid #aaa; padding-top: 3px; }
+        
         .line-v { width: 2.5px; background-color: #000; margin: 0 auto; height: 25px; }
         .line-h { height: 2.5px; background-color: #000; }
         .backbone { border-right: 2.5px solid #000; }
@@ -24,67 +71,171 @@
 
     <nav class="bg-white shadow py-3 px-6 flex justify-between items-center sticky top-0 z-50 text-[10px] font-bold uppercase">
         <div class="flex items-center space-x-3">
-            <img src="foto/logo-pangkep.png" alt="Logo" class="h-8 w-auto">
+            <img src="foto/logo-pangkep.jpg" alt="Logo" class="h-8 w-auto">
             <h1 class="text-blue-900">Desa Balo Baloang</h1>
         </div>
         <ul class="flex space-x-6">
             <li><a href="index.html" class="hover:text-blue-600">Beranda</a></li>
-            <li><a href="visi-misi.html" class="hover:text-blue-600">Visi Misi</a></li>
+            <li><a href="profil.html" class="hover:text-blue-600">Profil</a></li>
             <li><a href="struktur.html" class="text-blue-600 underline underline-offset-4">Struktur</a></li>
             <li><a href="monografi.html" class="hover:text-blue-600">Monografi</a></li>
         </ul>
     </nav>
 
     <section class="py-16 overflow-x-auto bg-white">
-        <h2 class="text-2xl font-black text-center text-blue-900 mb-2 uppercase italic">Struktur Organisasi Pemerintah Desa</h2>
-        <p class="text-center text-purple-700 font-black text-[12px] mb-10 uppercase italic animate-pulse tracking-wider">
-            * Klik pada kotak Kepala Dusun untuk melihat rincian RK/RT
-        </p>
+        <h2 class="text-2xl font-black text-center text-blue-900 mb-10 uppercase italic">Struktur Organisasi Pemerintah Desa</h2>
         
         <table class="struct-table">
-            <tr><td colspan="8"><div class="node-container" style="width: 200px; border: 2.5px solid #1e3a8a;"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan text-xs">Kepala Desa</div><div class="label-nama text-sm">BOHARI, S.Pd.</div></div></td></tr>
+            <tr>
+                <td colspan="8">
+                    <div class="node-container kades-container">
+                        <div class="photo-frame" style="width: 120px; height: 155px;">
+                            <img src="foto/kades.jpg" alt="BOHARI, S.Pd." class="img-zoom-kades">
+                        </div>
+                        <div class="label-jabatan text-[10px]">Kepala Desa</div>
+                        <div class="label-nama text-[12px]">BOHARI, S.Pd.</div>
+                    </div>
+                </td>
+            </tr>
             <tr><td colspan="4" class="backbone" style="height: 30px;"></td><td colspan="4"></td></tr>
             
-            <tr><td colspan="4" class="backbone"></td><td colspan="4"><div class="line-h" style="width: 50%;"></div><div class="line-v" style="margin-left: calc(50% - 1.25px);"></div><div class="node-container"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">Sekretaris Desa</div><div class="label-nama">ARDIANSAH, S.E.</div></div><div class="line-v"></div></td></tr>
+            <tr>
+                <td colspan="4" class="backbone"></td>
+                <td colspan="4">
+                    <div class="line-h" style="width: 50%;"></div>
+                    <div class="line-v" style="margin-left: calc(50% - 1.25px);"></div>
+                    <div class="node-container">
+                        <div class="photo-frame">
+                            <img src="foto/sekdes.jpg" alt="Sekdes" class="img-fit">
+                        </div>
+                        <div class="label-jabatan">Sekretaris Desa</div>
+                        <div class="label-nama">ARDIANSAH, S.E.</div>
+                    </div>
+                    <div class="line-v"></div>
+                </td>
+            </tr>
             
-            <tr><td colspan="4" class="backbone"></td><td colspan="4"><div class="flex"><div style="width: 16.6%;"></div><div class="line-h" style="width: 66.8%;"></div><div style="width: 16.6%;"></div></div><table class="w-full"><tr><td><div class="line-v"></div><div class="node-container"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">KAUR UMUM & TU</div><div class="label-nama">YUSRAN</div></div></td><td><div class="line-v"></div><div class="node-container"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">KAUR KEUANGAN</div><div class="label-nama">ILIATI, S.M</div></div></td><td><div class="line-v"></div><div class="node-container"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">KAUR PERENCANAAN</div><div class="label-nama">JARRE, S.Pd.</div></div></td></tr></table></td></tr>
+            <tr>
+                <td colspan="4" class="backbone"></td>
+                <td colspan="4">
+                    <div class="flex"><div style="width: 16.6%;"></div><div class="line-h" style="width: 66.8%;"></div><div style="width: 16.6%;"></div></div>
+                    <table class="w-full">
+                        <tr>
+                            <td>
+                                <div class="line-v"></div>
+                                <div class="node-container">
+                                    <div class="photo-frame"><img src="foto/kaur-umum.jpg" class="img-fit"></div>
+                                    <div class="label-jabatan">KAUR UMUM & TU</div>
+                                    <div class="label-nama">YUSRAN</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="line-v"></div>
+                                <div class="node-container">
+                                    <div class="photo-frame"><img src="foto/kaur-keuangan.jpg" class="img-fit"></div>
+                                    <div class="label-jabatan">KAUR KEUANGAN</div>
+                                    <div class="label-nama">ILIATI, S.M</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="line-v"></div>
+                                <div class="node-container">
+                                    <div class="photo-frame"><img src="foto/kaur-perencanaan.jpg" class="img-fit"></div>
+                                    <div class="label-jabatan">KAUR PERENCANAAN</div>
+                                    <div class="label-nama">JARRE, S.Pd.</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
             <tr><td colspan="4" class="backbone" style="height: 40px;"></td><td colspan="4"></td></tr>
             
-            <tr><td colspan="4"><div class="flex"><div style="width: 16.6%;"></div><div class="line-h" style="width: 83.4%;"></div></div><table class="w-full"><tr><td><div class="line-v"></div><div class="node-container"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">KASI PEMERINTAHAN</div><div class="label-nama">RUSTAN. S</div></div></td><td><div class="line-v"></div><div class="node-container"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">KASI KESOS</div><div class="label-nama">HASMITA</div></div></td><td><div class="line-v"></div><div class="node-container"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">KASI PELAYANAN</div><div class="label-nama">MUHAMMAD REWA</div></div></td></tr></table></td><td colspan="4" style="border-left: 2.5px solid #000;"></td></tr>
+            <tr>
+                <td colspan="4">
+                    <div class="flex"><div style="width: 16.6%;"></div><div class="line-h" style="width: 83.4%;"></div></div>
+                    <table class="w-full">
+                        <tr>
+                            <td>
+                                <div class="line-v"></div>
+                                <div class="node-container">
+                                    <div class="photo-frame"><img src="foto/kasi-pemerintahan.jpg" class="img-fit"></div>
+                                    <div class="label-jabatan">KASI PEMERINTAHAN</div>
+                                    <div class="label-nama">RUSTAN. S</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="line-v"></div>
+                                <div class="node-container">
+                                    <div class="photo-frame"><img src="foto/kasi-kesejahteraan.jpg" class="img-fit"></div>
+                                    <div class="label-jabatan">KASI KESRA</div>
+                                    <div class="label-nama">HASMITA</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="line-v"></div>
+                                <div class="node-container">
+                                    <div class="photo-frame"><img src="foto/kasi-pelayanan.jpg" class="img-fit"></div>
+                                    <div class="label-jabatan">KASI PELAYANAN</div>
+                                    <div class="label-nama">MUHAMMAD REWA</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="4" style="border-left: 2.5px solid #000;"></td>
+            </tr>
             <tr><td colspan="4" class="backbone" style="height: 60px;"></td><td colspan="4"></td></tr>
             
-            <tr><td colspan="8"><div class="line-h mx-auto" style="width: 75%;"></div><table class="w-full"><tr>
-                <td>
-                    <div class="line-v"></div>
-                    <a href="dusun-balo-baloang.html">
-                        <div class="node-container clickable"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">KADUS BALO BALOANG</div><div class="label-nama">SOPYAN H.S. Amd, Kep.</div></div>
-                    </a>
+            <tr>
+                <td colspan="8">
+                    <div class="line-h mx-auto" style="width: 75%;"></div>
+                    <table class="w-full">
+                        <tr>
+                            <td>
+                                <div class="line-v"></div>
+                                <a href="dusun-balo-baloang.html">
+                                    <div class="node-container clickable">
+                                        <div class="photo-frame"><img src="foto/kadus-balobaloang.jpg" class="img-fit"></div>
+                                        <div class="label-jabatan">KADUS BALO BALOANG</div>
+                                        <div class="label-nama">SOPYAN H.S.</div>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <div class="line-v"></div>
+                                <a href="dusun-sumanga.html">
+                                    <div class="node-container clickable">
+                                        <div class="photo-frame"><img src="foto/kadus-sumanga.jpg" class="img-fit"></div>
+                                        <div class="label-jabatan">KADUS SUMANGA</div>
+                                        <div class="label-nama">JERI, A.Md.</div>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <div class="line-v"></div>
+                                <a href="dusun-pelokang.html">
+                                    <div class="node-container clickable">
+                                        <div class="photo-frame"><img src="foto/kadus-pelokang.jpg" class="img-fit"></div>
+                                        <div class="label-jabatan">KADUS PELOKANG</div>
+                                        <div class="label-nama">KARMILA. N</div>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <div class="line-v"></div>
+                                <a href="dusun-langkoitang.html">
+                                    <div class="node-container clickable">
+                                        <div class="photo-frame"><img src="foto/kadus-langkoitang.jpg" class="img-fit"></div>
+                                        <div class="label-jabatan">KADUS LANGKOITANG</div>
+                                        <div class="label-nama">USMAN, S.Sos</div>
+                                    </div>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
-                <td>
-                    <div class="line-v"></div>
-                    <a href="dusun-sumanga.html">
-                        <div class="node-container clickable"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">KADUS SUMANGA</div><div class="label-nama">JERI, A.Md.</div></div>
-                    </a>
-                </td>
-                <td>
-                    <div class="line-v"></div>
-                    <a href="dusun-pelokang.html">
-                        <div class="node-container clickable"><div class="photo-frame overflow-hidden">FOTO</div><div class="label-jabatan">KADUS PELOKANG</div><div class="label-nama">KARMILA. N</div></div>
-                    </a>
-                </td>
-                <td>
-                    <div class="line-v"></div>
-                    <a href="dusun-langkoitang.html">
-                        <div class="node-container clickable">
-                            <div class="photo-frame overflow-hidden">
-                                <img src="foto/kadus-langkoitang.jpg" alt="Usman S.Sos" class="w-full h-full object-cover">
-                            </div>
-                            <div class="label-jabatan">KADUS LANGKOITANG</div>
-                            <div class="label-nama">USMAN, S.Sos</div>
-                        </div>
-                    </a>
-                </td>
-            </tr></table></td></tr>
+            </tr>
         </table>
     </section>
 
