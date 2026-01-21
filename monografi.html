@@ -12,10 +12,17 @@
         .card-monografi { @apply bg-white p-6 rounded-[2.5rem] shadow-xl border-b-8 transition-transform hover:scale-[1.02]; }
         .table-mono { @apply w-full text-left text-xs; }
         .table-mono td { @apply py-3 px-4 border-b border-gray-100 font-bold text-gray-700; }
-        @media print { .no-print { display: none !important; } }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .shadow-xl { box-shadow: none !important; border: 1px solid #eee; }
+            .container { max-width: 100% !important; width: 100% !important; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+
     <nav class="bg-white shadow-md sticky top-0 z-[100] border-b-4 border-blue-900 no-print">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -33,6 +40,7 @@
     <header class="bg-blue-900 text-white py-16 px-4 text-center">
         <h2 class="text-4xl font-black uppercase italic tracking-tighter">Monografi Desa</h2>
         <p class="text-blue-200 text-xs mt-3 font-bold uppercase tracking-[0.3em]">Data Statistik & Kependudukan Tahun 2026</p>
+        
         <button onclick="window.print()" class="no-print mt-8 bg-yellow-500 hover:bg-yellow-400 text-blue-900 px-6 py-2 rounded-full font-black text-[10px] uppercase tracking-widest shadow-lg transition-all">
             <i class="fas fa-file-pdf mr-2"></i> Simpan / Cetak PDF
         </button>
@@ -40,6 +48,7 @@
 
     <section class="py-10 px-4">
         <div class="container mx-auto max-w-5xl">
+            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 text-center">
                 <div class="bg-white p-6 rounded-3xl shadow-xl border-b-8 border-blue-500">
                     <p class="text-gray-400 text-[9px] font-black uppercase tracking-widest">Total Jiwa</p>
@@ -78,8 +87,8 @@
                         <tbody class="text-gray-700 text-sm font-bold">
                             <tr>
                                 <td class="px-6 py-5 border-b font-black text-blue-900">Dusun Balo Baloang</td>
-                                <td class="px-6 py-5 text-center border-b data-lk">260</td>
-                                <td class="px-6 py-5 text-center border-b data-pr">250</td>
+                                <td class="px-6 py-5 text-center border-b data-lk">455</td>
+                                <td class="px-6 py-5 text-center border-b data-pr">452</td>
                                 <td class="px-6 py-5 text-center bg-blue-50 font-black border-b row-total">0</td>
                                 <td class="px-6 py-5 text-center bg-yellow-50 border-b data-kk">278</td>
                             </tr>
@@ -108,6 +117,43 @@
                     </table>
                 </div>
             </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-900 p-4 rounded-r-2xl mb-12 flex items-center">
+                <i class="fas fa-info-circle text-blue-900 mr-4 text-xl"></i>
+                <p class="text-[11px] font-bold text-blue-900 italic">
+                    Catatan: Data kependudukan ini bersifat dinamis dan akan diperbarui secara berkala mengikuti perkembangan data terbaru di lapangan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-monografi border-blue-900">
+                    <div class="flex items-center space-x-3 mb-6"><i class="fas fa-graduation-cap text-2xl text-blue-900"></i><h4 class="font-black uppercase text-xs tracking-widest text-blue-900">Pendidikan</h4></div>
+                    <table class="table-mono text-xs">
+                        <tr><td>Sarjana (S1)</td><td class="text-right">--</td></tr>
+                        <tr><td>Tamat SMA</td><td class="text-right">--</td></tr>
+                        <tr><td>Tamat SMP</td><td class="text-right">--</td></tr>
+                        <tr><td>Tamat SD</td><td class="text-right">--</td></tr>
+                        <tr><td>Tidak Tamat SD</td><td class="text-right">--</td></tr>
+                    </table>
+                </div>
+
+                <div class="card-monografi border-yellow-500">
+                    <div class="flex items-center space-x-3 mb-6"><i class="fas fa-briefcase text-2xl text-yellow-500"></i><h4 class="font-black uppercase text-xs tracking-widest text-yellow-500">Pekerjaan</h4></div>
+                    <table class="table-mono">
+                        <tr><td>Nelayan</td><td class="text-right">--</td></tr>
+                        <tr><td>Petani</td><td class="text-right">--</td></tr>
+                        <tr><td>Pedagang</td><td class="text-right">--</td></tr>
+                    </table>
+                </div>
+
+                <div class="card-monografi border-green-600">
+                    <div class="flex items-center space-x-3 mb-6"><i class="fas fa-map-marker-alt text-2xl text-green-600"></i><h4 class="font-black uppercase text-xs tracking-widest text-green-600">Luas Wilayah</h4></div>
+                    <table class="table-mono">
+                        <tr><td>Pemukiman</td><td class="text-right">-- Ha</td></tr>
+                        <tr><td>Kebun/Hutan</td><td class="text-right">-- Ha</td></tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -119,19 +165,28 @@
         function hitungData() {
             let totalLaki = 0, totalPerempuan = 0, totalKK = 0;
             const rows = document.querySelectorAll('#tabel-penduduk tbody tr');
+
             rows.forEach(row => {
                 const lk = parseInt(row.querySelector('.data-lk').innerText) || 0;
                 const pr = parseInt(row.querySelector('.data-pr').innerText) || 0;
                 const kk = parseInt(row.querySelector('.data-kk').innerText) || 0;
-                row.querySelector('.row-total').innerText = lk + pr;
-                totalLaki += lk; totalPerempuan += pr; totalKK += kk;
+                
+                const totalBaris = lk + pr;
+                row.querySelector('.row-total').innerText = totalBaris;
+
+                totalLaki += lk;
+                totalPerempuan += pr;
+                totalKK += kk;
             });
+
             document.getElementById('total-laki').innerText = totalLaki.toLocaleString('id-ID');
             document.getElementById('total-perempuan').innerText = totalPerempuan.toLocaleString('id-ID');
             document.getElementById('total-jiwa').innerText = (totalLaki + totalPerempuan).toLocaleString('id-ID');
             document.getElementById('total-kk').innerText = totalKK.toLocaleString('id-ID');
         }
+
         window.onload = hitungData;
     </script>
+
 </body>
 </html>
