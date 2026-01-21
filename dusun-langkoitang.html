@@ -12,10 +12,14 @@
         .photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
         .label-jabatan { font-size: 8px; font-weight: bold; margin-bottom: 5px; color: #333; }
         .label-nama { font-size: 10px; font-weight: bold; color: #1e3a8a; border-top: 1px solid #eee; padding-top: 5px; }
+        
+        /* CSS Garis */
         .line-v { width: 2px; background: #000; height: 20px; margin: 0 auto; }
-        .line-h { height: 2px; background: #000; width: 50%; margin: 0 auto; }
+        .line-h { height: 2px; background: #000; width: 100%; margin: 0 auto; }
+        
         table { border-collapse: collapse; margin: 0 auto; }
-        td { vertical-align: top; padding: 0 10px; }
+        td { vertical-align: top; padding: 0; } /* Padding dihilangkan agar garis menyambung */
+        .padding-node { padding: 0 10px; } /* Padding khusus untuk kotak agar tidak rapat */
     </style>
 </head>
 <body>
@@ -30,6 +34,7 @@
                     <div class="label-nama">USMAN, S.Sos</div>
                 </div><div class="line-v"></div>
             </td></tr>
+            
             <tr><td colspan="2">
                 <div class="node" style="border: 2px solid #dc2626;">
                     <div class="photo-box"><img src="foto/ketua-rk-langkoitang.jpg"></div>
@@ -37,10 +42,33 @@
                     <div class="label-nama">BAHTIAR. M</div>
                 </div><div class="line-v"></div>
             </td></tr>
-            <tr><td colspan="2"><div class="line-h"></div></td></tr>
+            
             <tr>
-                <td><div class="line-v"></div><div class="node"><div class="photo-box"><img src="foto/ketua-rt-01-langkoitang.jpg"></div><div class="label-jabatan">RT 01</div><div class="label-nama">DG. NYAMPA</div></div></td>
-                <td><div class="line-v"></div><div class="node"><div class="photo-box"><img src="foto/ketua-rt-02-langkoitang.jpg"></div><div class="label-jabatan">RT 02</div><div class="label-nama">DG. HASENG</div></div></td>
+                <td style="border-right: 1px solid black; width: 50%; height: 2px;">
+                    <div class="line-h" style="width: 50%; margin-left: 50%;"></div>
+                </td>
+                <td style="border-left: 1px solid black; width: 50%; height: 2px;">
+                    <div class="line-h" style="width: 50%; margin-right: 50%;"></div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="padding-node">
+                    <div class="line-v"></div>
+                    <div class="node">
+                        <div class="photo-box"><img src="foto/ketua-rt-01-langkoitang.jpg"></div>
+                        <div class="label-jabatan">RT 01</div>
+                        <div class="label-nama">DG. NYAMPA</div>
+                    </div>
+                </td>
+                <td class="padding-node">
+                    <div class="line-v"></div>
+                    <div class="node">
+                        <div class="photo-box"><img src="foto/ketua-rt-02-langkoitang.jpg"></div>
+                        <div class="label-jabatan">RT 02</div>
+                        <div class="label-nama">DG. HASENG</div>
+                    </div>
+                </td>
             </tr>
         </table>
     </div>

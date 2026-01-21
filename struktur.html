@@ -65,6 +65,15 @@
         .backbone { border-right: 2.5px solid #000; }
         .struct-table { border-collapse: collapse; margin: 0 auto; table-layout: fixed; width: 1050px; }
         .struct-table td { padding: 0; vertical-align: top; }
+
+        /* Animasi Berkedip */
+        @keyframes blinker {
+            50% { opacity: 0; transform: scale(1.1); }
+        }
+        .text-hidup {
+            animation: blinker 0.8s linear infinite;
+            display: inline-block;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -83,7 +92,13 @@
     </nav>
 
     <section class="py-16 overflow-x-auto bg-white">
-        <h2 class="text-2xl font-black text-center text-blue-900 mb-10 uppercase italic">Struktur Organisasi Pemerintah Desa</h2>
+        <h2 class="text-2xl font-black text-center text-blue-900 mb-2 uppercase italic">Struktur Organisasi Pemerintah Desa</h2>
+        
+        <div class="text-center mb-8">
+            <span class="text-[11px] font-bold text-purple-600 italic text-hidup tracking-tighter">
+                * Klik di kotak Kadus untuk melihat rincian RK/RT
+            </span>
+        </div>
         
         <table class="struct-table">
             <tr>
