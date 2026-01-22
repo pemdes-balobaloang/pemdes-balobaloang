@@ -2,71 +2,88 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>RK & RT Pelokang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Dusun Pelokang</title>
     <style>
         body { font-family: sans-serif; background-color: #f3f4f6; text-align: center; padding: 20px; }
         .btn-kembali { display: inline-block; padding: 10px 20px; background: #1e3a8a; color: white; text-decoration: none; border-radius: 50px; font-size: 11px; margin-bottom: 20px; font-weight: bold; }
-        .container { background: white; padding: 30px; border-radius: 10px; display: inline-block; min-width: 450px; border-top: 5px solid #1e3a8a; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .node { border: 1px solid #444; background: #fff; padding: 8px; width: 140px; margin: 0 auto; border-radius: 4px; }
+        
+        .container { background: white; padding: 30px; border-radius: 10px; display: inline-block; min-width: 600px; border-top: 5px solid #1e3a8a; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        
+        /* Kotak sebagai Link */
+        .node { border: 1px solid #444; background: #fff; padding: 10px; width: 155px; margin: 0 auto; border-radius: 4px; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; display: block; text-decoration: none; color: inherit; }
+        .node:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.1); background-color: #f9fafb; }
+        
         .photo-box { width: 100px; height: 130px; background-color: #e5e7eb; margin: 0 auto 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid #ccc; }
         .photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-        .label-jabatan { font-size: 8px; font-weight: bold; margin-bottom: 5px; color: #333; text-transform: uppercase; }
-        .label-nama { font-size: 10px; font-weight: bold; color: #1e3a8a; border-top: 1px solid #eee; padding-top: 5px; }
         
-        /* CSS Garis Sempurna */
+        .label-jabatan { font-size: 9px; font-weight: bold; margin-bottom: 5px; color: #333; text-transform: uppercase; }
+        .label-nama { font-size: 10px; font-weight: bold; color: #1e3a8a; border-top: 1px solid #eee; padding-top: 5px; display: block; }
+        .label-nipd { font-size: 10px; color: #b45309; font-family: monospace; display: block; margin-top: 5px; font-weight: bold; background: #fef3c7; padding: 2px; border-radius: 3px; }
+        
         .line-v { width: 2px; background: #000; height: 20px; margin: 0 auto; }
         .line-h { height: 2px; background: #000; width: 100%; }
         
         table { border-collapse: collapse; margin: 0 auto; width: 100%; }
-        td { vertical-align: top; padding: 0; position: relative; }
-        .padding-node { padding: 0 15px; }
+        td { vertical-align: top; padding: 0; }
+        .padding-node { padding: 0 10px; }
     </style>
 </head>
 <body>
+
     <a href="struktur.html" class="btn-kembali">← KEMBALI KE STRUKTUR UTAMA</a>
-    <h2>Dusun Pelokang</h2>
+    <h2 style="color: #1e3a8a; text-transform: uppercase;">Struktur Wilayah Dusun Pelokang</h2>
+
     <div class="container">
         <table>
-            <tr><td colspan="2">
-                <div class="node" style="border: 2px solid #1e3a8a;">
-                    <div class="photo-box"><img src="foto/kadus-pelokang.jpg"></div>
-                    <div class="label-jabatan">KADUS</div>
-                    <div class="label-nama">KARMILA. N</div>
-                </div><div class="line-v"></div>
-            </td></tr>
-            
-            <tr><td colspan="2">
-                <div class="node" style="border: 2px solid #dc2626;">
-                    <div class="photo-box"><img src="foto/ketua-rk-pelokang.jpg"></div>
-                    <div class="label-jabatan" style="color: #dc2626;">KETUA RK PELOKANG</div>
-                    <div class="label-nama">SYAMSUL SALEH</div>
-                </div><div class="line-v"></div>
-            </td></tr>
+            <tr>
+                <td colspan="2">
+                    <a href="tupoksi-kadus.html?nama=KARMILA. N.&dusun=PELOKANG&foto=kadus-pelokang.jpg&nipd=7310122010" class="node" style="border: 2px solid #1e3a8a;">
+                        <div class="photo-box"><img src="foto/kadus-pelokang.jpg" onerror="this.src='https://via.placeholder.com/100x130?text=Foto+Kadus'"></div>
+                        <div class="label-jabatan">KADUS</div>
+                        <span class="label-nama">KARMILA. N</span>
+                        <span class="label-nipd">NIPD: 7310122010</span>
+                    </a>
+                    <div class="line-v"></div>
+                </td>
+            </tr>
             
             <tr>
-                <td style="height: 2px;"><div class="line-h" style="width: 50%; margin-left: 50%;"></div></td>
-                <td style="height: 2px;"><div class="line-h" style="width: 50%; margin-right: 50%;"></div></td>
+                <td colspan="2">
+                    <a href="tupoksi-rk.html?nama=SYAMSUL SALEH&foto=ketua-rk-pelokang.jpg" class="node" style="border: 2px solid #dc2626;">
+                        <div class="photo-box"><img src="foto/ketua-rk-pelokang.jpg" onerror="this.src='https://via.placeholder.com/100x130?text=Foto+RK'"></div>
+                        <div class="label-jabatan" style="color: #dc2626;">KETUA RK</div>
+                        <span class="label-nama">SYAMSUL SALEH</span>
+                    </a>
+                    <div class="line-v"></div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><div class="line-h" style="width: 50%; margin-left: 50%;"></div></td>
+                <td><div class="line-h" style="width: 50%; margin-right: 50%;"></div></td>
             </tr>
             
             <tr>
                 <td class="padding-node">
                     <div class="line-v"></div>
-                    <div class="node">
-                        <div class="photo-box"><img src="foto/ketua-rt-01-pelokang.jpg"></div>
+                    <a href="tupoksi-rt.html?nama=M. AMIR&jabatan=RT 01&foto=ketua-rt-01-pelokang.jpg" class="node">
+                        <div class="photo-box"><img src="foto/ketua-rt-01-pelokang.jpg" onerror="this.src='https://via.placeholder.com/100x130?text=RT+01'"></div>
                         <div class="label-jabatan">RT 01</div>
-                        <div class="label-nama">MUH. AMIR</div>
-                    </div>
+                        <span class="label-nama">M. AMIR</span>
+                    </a>
                 </td>
                 <td class="padding-node">
                     <div class="line-v"></div>
-                    <div class="node">
-                        <div class="photo-box"><img src="foto/ketua-rt-02-pelokang.jpg"></div>
+                    <a href="tupoksi-rt.html?nama=NANRIN&jabatan=RT 02&foto=ketua-rt-02-pelokang.jpg" class="node">
+                        <div class="photo-box"><img src="foto/ketua-rt-02-pelokang.jpg" onerror="this.src='https://via.placeholder.com/100x130?text=RT+02'"></div>
                         <div class="label-jabatan">RT 02</div>
-                        <div class="label-nama">NANRIN</div>
-                    </div>
+                        <span class="label-nama">NANRIN</span>
+                    </a>
                 </td>
             </tr>
         </table>
     </div>
+
 </body>
 </html>

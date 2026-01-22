@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tupoksi Ketua RT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-100">
+
+    <div class="max-w-5xl mx-auto my-10 bg-white rounded-xl shadow-lg overflow-hidden flex border-t-8 border-emerald-600">
+        <div class="w-1/3 bg-emerald-700 p-8 text-white text-center flex flex-col items-center justify-center">
+            <div class="w-48 h-64 bg-emerald-900 rounded-lg border-4 border-white/20 overflow-hidden mb-4 flex items-center justify-center relative">
+                <img id="f" src="" class="w-full h-full object-cover object-top" style="display:none;">
+                <span id="err" class="text-[10px] font-bold opacity-50 px-4 text-center">FOTO TIDAK DITEMUKAN PADA FOLDER 'foto'</span>
+            </div>
+            <h2 id="n" class="text-2xl font-black italic leading-tight uppercase">Nama</h2>
+            <div id="j" class="bg-white text-emerald-800 font-bold px-4 py-1 rounded-full mt-3 text-xs shadow-md">RT 00</div>
+            <p class="text-[10px] mt-4 tracking-widest opacity-70 uppercase font-bold text-emerald-100">Lembaga Kemasyarakatan Desa</p>
+        </div>
+
+        <div class="w-2/3 p-12 bg-white">
+            <div class="mb-8 border-b pb-4">
+                <h3 id="titel" class="text-3xl font-black text-emerald-800 uppercase italic leading-none">Tugas & Fungsi</h3>
+                <p class="text-slate-400 text-xs mt-2 font-bold tracking-widest uppercase italic">Pedoman Kerja Rukun Tetangga</p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-6 text-[13.5px] text-slate-700 italic leading-relaxed">
+                <div>
+                    <strong class="text-emerald-700 not-italic uppercase block text-[11px] font-black mb-1">1. Administrasi & Pendataan</strong>
+                    Membantu Pemerintah Desa dalam urusan administrasi kependudukan, pengantar surat menyurat, serta melakukan pendataan berkala terhadap profil warga di lingkungan RT.
+                </div>
+                <div>
+                    <strong class="text-emerald-700 not-italic uppercase block text-[11px] font-black mb-1">2. Kerukunan & Gotong Royong</strong>
+                    Menjaga keharmonisan, mencegah perselisihan antar warga, serta menjadi penggerak dalam setiap kegiatan gotong royong dan kerja bakti lingkungan.
+                </div>
+                <div>
+                    <strong class="text-emerald-700 not-italic uppercase block text-[11px] font-black mb-1">3. Keamanan & Ketertiban</strong>
+                    Membantu menciptakan lingkungan yang aman dan tertib, serta berkoordinasi dengan pihak terkait jika terdapat gangguan ketentraman di masyarakat.
+                </div>
+                <div>
+                    <strong class="text-emerald-700 not-italic uppercase block text-[11px] font-black mb-1">4. Penyaluran Aspirasi Masyarakat</strong>
+                    Menjadi jembatan komunikasi untuk menampung keluhan, saran, maupun usulan pembangunan dari warga untuk disampaikan kepada Ketua RK atau Kepala Dusun.
+                </div>
+                <div>
+                    <strong class="text-emerald-700 not-italic uppercase block text-[11px] font-black mb-1">5. Dukungan Program Sosial</strong>
+                    Membantu pelaksanaan program sosial pemerintah desa seperti Posyandu, bantuan sosial, dan sosialisasi kebijakan desa agar tepat sasaran kepada warga.
+                </div>
+            </div>
+            
+            <button onclick="window.history.back()" class="mt-10 px-8 py-2 border-2 border-emerald-800 text-emerald-800 font-bold rounded-full hover:bg-emerald-800 hover:text-white transition uppercase text-xs tracking-widest">Kembali</button>
+        </div>
+    </div>
+
+    <script>
+        const u = new URLSearchParams(window.location.search);
+        const nama = u.get('nama');
+        const jab = u.get('jabatan');
+        const foto = u.get('foto');
+
+        if(nama) document.getElementById('n').innerText = nama;
+        if(jab) {
+            document.getElementById('j').innerText = jab;
+            document.getElementById('titel').innerText = "Tugas & Fungsi " + jab;
+        }
+
+        const img = document.getElementById('f');
+        const err = document.getElementById('err');
+
+        if(foto) {
+            // Mencoba memuat foto
+            img.src = "foto/" + foto;
+            img.onload = function() {
+                img.style.display = "block";
+                err.style.display = "none";
+            };
+            img.onerror = function() {
+                img.style.display = "none";
+                err.style.display = "block";
+                console.error("Gagal memuat: foto/" + foto);
+            };
+        }
+    </script>
+</body>
+</html>

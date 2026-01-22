@@ -1,0 +1,40 @@
+ catatan untuk nama foto agar langsung terbaca dan tampil
+   
+
+
+harus pakai hurf kecil dan tidak boleh pakai spasi dan di tulis jpg dibelakang nama
+
+
+ 
+  kades.jpg
+  sekdes.jpg
+  kaur-keuangan.jpg
+  kaur-perencanaan.jpg
+  kaur-umum.jpg
+  kasi-pelayanan.jpg
+  kasi-pemerintahan.jpg
+  kasi-kesejahteraan.jpg
+  kadus-balobaloang.jpg
+  kadus-sumanga.jpg
+  kadus-pelokang.jpg
+  kadus-langkoitang.jpg
+  ketua-rk-balobaloang.jpg
+  ketua-rk-sumanga.jpg
+  ketua-rk-pelokang.jpg
+  ketua-rk-langkoitang.jpg
+  ketua-rt-01-balobaloang.jpg
+  ketua-rt-02-balobaloang.jpg
+  ketua-rt-03-balobaloang.jpg
+  ketua-rt-04-balobaloang.jpg
+  ketua-rt-05-balobaloang.jpg
+  ketua-rt-01-sumanga.jpg
+  ketua-rt-02-sumanga.jpg
+  ketua-rt-03-sumanga.jpg
+  ketua-rt-04-sumanga.jpg
+  ketua-rt-01-pelokang.jpg
+  ketua-rt-02-pelokang.jpg
+  ketua-rt-01-langkoitang.jpg
+  ketua-rt-02-langkoitang.jpg
+
+
+tidak boleh pakai huruf kapital. jadi siapaun nanti orangnya kalua berganti orang cukup nama fotonya di beri nama begitu akan langsung ter update
