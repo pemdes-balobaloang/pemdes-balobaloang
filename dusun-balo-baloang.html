@@ -5,41 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RK & RT Balo Baloang</title>
     <style>
-        body { font-family: sans-serif; background-color: #f3f4f6; text-align: center; padding: 20px; }
-        .btn-kembali { display: inline-block; padding: 10px 20px; background: #1e3a8a; color: white; text-decoration: none; border-radius: 50px; font-size: 11px; margin-bottom: 20px; font-weight: bold; transition: 0.3s; }
+        /* Menggunakan font sistem agar tidak loading dari server Google */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #f3f4f6; 
+            text-align: center; 
+            padding: 20px; 
+            margin: 0;
+        }
+
+        .btn-kembali { 
+            display: inline-block; 
+            padding: 10px 24px; 
+            background: #1e3a8a; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-size: 11px; 
+            margin-bottom: 20px; 
+            font-weight: bold; 
+            transition: background 0.2s; 
+        }
+
         .btn-kembali:hover { background: #111827; }
-        .container { background: white; padding: 30px; border-radius: 10px; display: inline-block; min-width: 900px; border-top: 5px solid #1e3a8a; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .node { border: 1px solid #444; background: #fff; padding: 10px; width: 155px; margin: 0 auto; border-radius: 4px; transition: transform 0.2s; cursor: pointer; }
-        .node:hover { transform: scale(1.05); }
-        .photo-box { width: 100px; height: 130px; background-color: #e5e7eb; margin: 0 auto 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid #ccc; }
+
+        .container { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            display: inline-block; 
+            min-width: 900px; 
+            border-top: 5px solid #1e3a8a; 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+        }
+
+        .node { 
+            border: 1px solid #cbd5e1; 
+            background: #fff; 
+            padding: 10px; 
+            width: 150px; 
+            margin: 0 auto; 
+            border-radius: 8px; 
+            transition: transform 0.2s, border-color 0.2s; 
+            cursor: pointer; 
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .node:hover { 
+            transform: translateY(-3px); 
+            border-color: #1e3a8a;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .photo-box { 
+            width: 100px; 
+            height: 130px; 
+            background-color: #f1f5f9; 
+            margin: 0 auto 10px; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 4px;
+        }
+
         .photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-        .label-jabatan { font-size: 9px; font-weight: bold; margin-bottom: 5px; color: #333; text-transform: uppercase; }
-        .label-nama { font-size: 10px; font-weight: bold; color: #1e3a8a; border-top: 1px solid #eee; padding-top: 5px; display: block; }
-        .label-nipd { font-size: 10px; color: #b45309; font-family: monospace; display: block; margin-top: 5px; font-weight: bold; background: #fef3c7; padding: 2px; border-radius: 3px; }
-        .line-v { width: 2px; background: #000; height: 20px; margin: 0 auto; }
-        .line-h { height: 2px; background: #000; width: 100%; }
-        table { border-collapse: collapse; margin: 0 auto; width: 100%; }
+
+        .label-jabatan { font-size: 9px; font-weight: 800; margin-bottom: 6px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+        .label-nama { font-size: 10px; font-weight: bold; color: #1e3a8a; border-top: 1px solid #f1f5f9; padding-top: 6px; display: block; }
+        .label-nipd { font-size: 9px; color: #92400e; font-family: monospace; display: block; margin-top: 5px; font-weight: bold; background: #fef3c7; padding: 2px 4px; border-radius: 4px; }
+
+        /* Garis Struktur */
+        .line-v { width: 2px; background: #334155; height: 25px; margin: 0 auto; }
+        .line-h { height: 2px; background: #334155; width: 100%; }
+
+        table { border-collapse: collapse; margin: 0 auto; width: 100%; table-layout: fixed; }
         td { vertical-align: top; padding: 0; }
-        .padding-node { padding: 0 10px; }
-        .clickable-node { text-decoration: none; color: inherit; }
+        .padding-node { padding: 0 5px; }
+
+        h2 { color: #1e3a8a; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 25px; }
     </style>
 </head>
 <body>
 
     <a href="struktur.html" class="btn-kembali">← KEMBALI KE STRUKTUR UTAMA</a>
-    <h2 style="color: #1e3a8a; text-transform: uppercase;">Struktur Wilayah Dusun Balo Baloang</h2>
+    <h2>STRUKTUR WILAYAH DUSUN BALO BALOANG</h2>
 
     <div class="container">
         <table>
             <tr>
                 <td colspan="5">
-                    <a href="tupoksi-kadus.html?nama=SOPYAN H.S., A.md. Kep.&dusun=BALO BALOANG&foto=kadus-balo.jpg&nipd=19920615201901200310591" class="clickable-node">
-                        <div class="node" style="border: 2px solid #1e3a8a;">
-                            <div class="photo-box"><img src="foto/kadus-balo.jpg"></div>
-                            <div class="label-jabatan">KADUS</div>
-                            <span class="label-nama">SOPYAN H.S., A.md. Kep.</span>
-                            <span class="label-nipd">NIPD:19930615201901200310191</span>
+                    <a href="tupoksi-kadus.html?nama=SOPYAN H.S., A.md. Kep.&dusun=BALO BALOANG&foto=kadus-balobaloang.jpg&nipd=19930615201901200310191" class="node" style="border: 2px solid #1e3a8a;">
+                        <div class="photo-box">
+                            <img src="foto/kadus-balobaloang.jpg" loading="lazy" onerror="this.src='https://via.placeholder.com/100x130?text=No+Photo'">
                         </div>
+                        <div class="label-jabatan">KADUS</div>
+                        <span class="label-nama">SOPYAN H.S., A.md. Kep.</span>
+                        <span class="label-nipd">NIPD:19930615201901200310191</span>
                     </a>
                     <div class="line-v"></div>
                 </td>
@@ -47,12 +112,12 @@
             
             <tr>
                 <td colspan="5">
-                    <a href="tupoksi-rk.html?nama=HASANUDDIN M.&jabatan=KETUA RK" class="clickable-node">
-                        <div class="node" style="border: 2px solid #dc2626;">
-                            <div class="photo-box"><img src="foto/ketua-rk-balobaloang.jpg"></div>
-                            <div class="label-jabatan" style="color: #dc2626;">KETUA RK</div>
-                            <span class="label-nama">HASANUDDIN M.</span>
+                    <a href="tupoksi-rk.html?nama=HASANUDDIN M.&jabatan=KETUA RK&foto=ketua-rk-balobaloang.jpg" class="node" style="border: 2px solid #dc2626;">
+                        <div class="photo-box">
+                            <img src="foto/ketua-rk-balobaloang.jpg" loading="lazy" onerror="this.src='https://via.placeholder.com/100x130?text=RK'">
                         </div>
+                        <div class="label-jabatan" style="color: #dc2626;">KETUA RK</div>
+                        <span class="label-nama">HASANUDDIN M.</span>
                     </a>
                     <div class="line-v"></div>
                 </td>
@@ -69,52 +134,42 @@
             <tr>
                 <td class="padding-node">
                     <div class="line-v"></div>
-                    <a href="tupoksi-rt.html?nama=HASNAENI&jabatan=RT 01" class="clickable-node">
-                        <div class="node">
-                            <div class="photo-box"><img src="foto/ketua-rt-01-balobaloang.jpg"></div>
-                            <div class="label-jabatan">RT 01</div>
-                            <span class="label-nama">HASNAENI</span>
-                        </div>
+                    <a href="tupoksi-rt.html?nama=HASNAENI&jabatan=RT 01&foto=ketua-rt-01-balobaloang.jpg" class="node">
+                        <div class="photo-box"><img src="foto/ketua-rt-01-balobaloang.jpg" loading="lazy" onerror="this.src='https://via.placeholder.com/100x130?text=RT+01'"></div>
+                        <div class="label-jabatan">RT 01</div>
+                        <span class="label-nama">HASNAENI</span>
                     </a>
                 </td>
                 <td class="padding-node">
                     <div class="line-v"></div>
-                    <a href="tupoksi-rt.html?nama=USMAN DG. CINI&jabatan=RT 02" class="clickable-node">
-                        <div class="node">
-                            <div class="photo-box"><img src="foto/ketua-rt-02-balobaloang.jpg"></div>
-                            <div class="label-jabatan">RT 02</div>
-                            <span class="label-nama">USMAN DG. CINI</span>
-                        </div>
+                    <a href="tupoksi-rt.html?nama=USMAN DG. CINI&jabatan=RT 02&foto=ketua-rt-02-balobaloang.jpg" class="node">
+                        <div class="photo-box"><img src="foto/ketua-rt-02-balobaloang.jpg" loading="lazy" onerror="this.src='https://via.placeholder.com/100x130?text=RT+02'"></div>
+                        <div class="label-jabatan">RT 02</div>
+                        <span class="label-nama">USMAN DG. CINI</span>
                     </a>
                 </td>
                 <td class="padding-node">
                     <div class="line-v"></div>
-                    <a href="tupoksi-rt.html?nama=HASMA&jabatan=RT 03" class="clickable-node">
-                        <div class="node">
-                            <div class="photo-box"><img src="foto/ketua-rt-03-balobaloang.jpg"></div>
-                            <div class="label-jabatan">RT 03</div>
-                            <span class="label-nama">HASMA</span>
-                        </div>
+                    <a href="tupoksi-rt.html?nama=HASMA&jabatan=RT 03&foto=ketua-rt-03-balobaloang.jpg" class="node">
+                        <div class="photo-box"><img src="foto/ketua-rt-03-balobaloang.jpg" loading="lazy" onerror="this.src='https://via.placeholder.com/100x130?text=RT+03'"></div>
+                        <div class="label-jabatan">RT 03</div>
+                        <span class="label-nama">HASMA</span>
                     </a>
                 </td>
                 <td class="padding-node">
                     <div class="line-v"></div>
-                    <a href="tupoksi-rt.html?nama=HAMALUDDIN&jabatan=RT 04" class="clickable-node">
-                        <div class="node">
-                            <div class="photo-box"><img src="foto/ketua-rt-04-balobaloang.jpg"></div>
-                            <div class="label-jabatan">RT 04</div>
-                            <span class="label-nama">HAMALUDDIN</span>
-                        </div>
+                    <a href="tupoksi-rt.html?nama=HAMALUDDIN&jabatan=RT 04&foto=ketua-rt-04-balobaloang.jpg" class="node">
+                        <div class="photo-box"><img src="foto/ketua-rt-04-balobaloang.jpg" loading="lazy" onerror="this.src='https://via.placeholder.com/100x130?text=RT+04'"></div>
+                        <div class="label-jabatan">RT 04</div>
+                        <span class="label-nama">HAMALUDDIN</span>
                     </a>
                 </td>
                 <td class="padding-node">
                     <div class="line-v"></div>
-                    <a href="tupoksi-rt.html?nama=HAERUL&jabatan=RT 05" class="clickable-node">
-                        <div class="node">
-                            <div class="photo-box"><img src="foto/ketua-rt-05-balobaloang.jpg"></div>
-                            <div class="label-jabatan">RT 05</div>
-                            <span class="label-nama">HAERUL</span>
-                        </div>
+                    <a href="tupoksi-rt.html?nama=HAERUL&jabatan=RT 05&foto=ketua-rt-05-balobaloang.jpg" class="node">
+                        <div class="photo-box"><img src="foto/ketua-rt-05-balobaloang.jpg" loading="lazy" onerror="this.src='https://via.placeholder.com/100x130?text=RT+05'"></div>
+                        <div class="label-jabatan">RT 05</div>
+                        <span class="label-nama">HAERUL</span>
                     </a>
                 </td>
             </tr>
