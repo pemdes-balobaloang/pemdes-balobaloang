@@ -2,31 +2,98 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita Desa Balo Baloang</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Berita Desa - Balo Baloang</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        /* Pengaman Manual: Memastikan gambar tidak meledak ukurannya */
+        .foto-kartu {
+            width: 100%;
+            height: 220px; /* Mengunci tinggi gambar */
+            object-fit: cover;
+            display: block;
+        }
+        .pembatas-kartu {
+            max-width: 400px; /* Mengunci lebar maksimal kartu berita */
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <nav class="bg-white shadow py-3 px-6 flex justify-between items-center sticky top-0 z-50">
-        <h1 class="font-bold text-blue-900 uppercase">Desa Balo Baloang</h1>
-        <ul class="flex space-x-4 text-[10px] font-bold uppercase">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="berita.html" class="text-blue-600">Berita</a></li>
-        </ul>
+<body class="bg-slate-50 text-slate-800">
+
+    <nav class="bg-white border-b py-5 px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="font-black text-blue-900 tracking-tighter italic">DESA BALO BALOANG</h1>
+            <div class="space-x-6 text-[10px] font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-blue-600">Beranda</a>
+                <a href="berita.html" class="text-blue-600">Berita</a>
+            </div>
+        </div>
     </nav>
 
-    <section class="py-16 container mx-auto px-4">
-        <h2 class="text-3xl font-black text-blue-900 mb-10 uppercase italic text-center">Kabar Terbaru Desa</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl shadow-md overflow-hidden border">
-                <div class="h-40 bg-blue-100 flex items-center justify-center text-blue-300 italic">Gambar Berita</div>
-                <div class="p-6">
-                    <span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-1 rounded font-bold uppercase">Kegiatan</span>
-                    <h3 class="font-bold text-lg mt-3 leading-tight">Penyaluran BLT Dana Desa Tahap I</h3>
-                    <p class="text-sm text-gray-500 mt-2">Pemerintah desa menyalurkan bantuan kepada 50 KPM...</p>
-                    <a href="#" class="inline-block mt-4 text-blue-700 font-bold text-xs uppercase">Selengkapnya</a>
+    <main class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-black text-blue-900 mb-12 uppercase italic text-center tracking-tight">Kabar Terbaru Desa</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-100 flex flex-col hover:shadow-xl transition-all duration-300 pembatas-kartu mx-auto md:mx-0">
+                    
+                    <div class="overflow-hidden bg-slate-200">
+                        <img src="foto/berita/rapat-2026-1.jpg" alt="Rapat Desa" class="foto-kartu">
+                    </div>
+
+                    <div class="p-7 flex flex-col flex-grow">
+                        <div class="mb-4">
+                            <span class="bg-blue-100 text-blue-700 text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-[0.2em]">Pemerintahan</span>
+                        </div>
+                        
+                        <h3 class="font-bold text-lg leading-tight text-slate-800 uppercase mb-4">
+                            Optimalkan Pelayanan 2026, Pemdes Balo Baloang Gelar Rakor Perdana
+                        </h3>
+                        
+                        <p class="text-sm text-slate-500 italic leading-relaxed mb-8">
+                            Kepala Desa Bohari, S.Pd memimpin rapat koordinasi perdana tahun 2026 bersama jajaran perangkat desa di Sekretariat Daratan Pangkep.
+                        </p>
+                        
+                        <div class="mt-auto">
+                            <a href="foto/halaman berita/baca-berita-1.html" class="inline-block text-blue-700 font-black text-[10px] uppercase border-b-2 border-blue-700 pb-1 hover:text-blue-900 transition-colors">
+                                Selengkapnya →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-100 flex flex-col hover:shadow-xl transition-all duration-300 pembatas-kartu mx-auto md:mx-0">
+            <div class="overflow-hidden bg-slate-200">
+                <img src="foto/berita/bantuan-abrasi-dinsos.jpg" alt="Bantuan Dinsos" class="foto-kartu">
+            </div>
+            <div class="p-7 flex flex-col flex-grow">
+                <div class="mb-4">
+                    <span class="bg-red-100 text-red-700 text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-[0.2em]">Sosial</span>
+                </div>
+                <h3 class="font-bold text-lg leading-tight text-slate-800 uppercase mb-4">
+                    Respon Cepat Abrasi Pulau Sumanga, Pemdes Balo Baloang Salurkan Bantuan Dinsos
+                </h3>
+                <p class="text-sm text-slate-500 italic leading-relaxed mb-8">
+                    Pemerintah Desa Balo Baloang menyalurkan bantuan logistik untuk warga terdampak abrasi akibat pengikisan ombak di Pulau Sumanga.
+                </p>
+                <div class="mt-auto">
+                    <a href="foto/halaman berita/baca-berita-2.html" class="inline-block text-blue-700 font-black text-[10px] uppercase border-b-2 border-blue-700 pb-1 hover:text-blue-900 transition-colors">
+                        Selengkapnya →
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+
+                </div>
+        </div>
+    </main>
+
+    <footer class="bg-white py-12 text-center border-t border-slate-100">
+        <p class="text-[10px] font-black uppercase tracking-[0.5em] text-slate-300 italic">Desa Balo Baloang</p>
+    </footer>
+
 </body>
 </html>
