@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main # Ganti menjadi 'master' jika itu nama branch utama di GitHub Anda
+
+media_folder: "foto/berita" # Foto yang diunggah admin akan otomatis masuk ke folder ini
+public_folder: "foto/berita"
+
+collections:
+  - name: "berita"
+    label: "Daftar Berita"
+    folder: "data/berita" # Tulisan berita admin akan tersimpan di sini sebagai file .md
+    create: true # Memungkinkan admin menambah berita baru
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul Berita", name: "title", widget: "string" }
+      - { label: "Tanggal Publish", name: "date", widget: "datetime" }
+      - { label: "Kategori", name: "category", widget: "select", options: ["Pemerintahan", "Sosial", "Pembangunan", "Pengumuman"] }
+      - { label: "Ringkasan Pendek", name: "summary", widget: "text" }
+      - { label: "Foto Berita", name: "image", widget: "image" }
+      - { label: "Isi Berita Lengkap", name: "body", widget: "markdown" }
