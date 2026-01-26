@@ -8,5 +8,12 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <script>
+    // Memastikan jika ada error, kita bisa melihatnya di console browser
+    window.addEventListener('error', function(e) {
+      console.error('CMS Error:', e.message);
+    });
+  </script>
 </body>
 </html>
