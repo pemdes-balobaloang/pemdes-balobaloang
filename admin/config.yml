@@ -1,15 +1,16 @@
 backend:
-  name: git-gateway
-  branch: main # Ganti menjadi 'master' jika itu nama branch utama di GitHub Anda
+  name: github
+  repo: pemdes-balobaloang/pemdes-balobaloang
+  branch: main
 
-media_folder: "foto/berita" # Foto yang diunggah admin akan otomatis masuk ke folder ini
+media_folder: "foto/berita"
 public_folder: "foto/berita"
 
 collections:
   - name: "berita"
     label: "Daftar Berita"
-    folder: "data/berita" # Tulisan berita admin akan tersimpan di sini sebagai file .md
-    create: true # Memungkinkan admin menambah berita baru
+    folder: "data/berita"
+    create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Judul Berita", name: "title", widget: "string" }
