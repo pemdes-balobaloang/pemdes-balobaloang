@@ -4,20 +4,3 @@ backend:
   branch: main
   base_url: https://github.com
   auth_endpoint: login/oauth/authorize
-
-media_folder: "foto/berita"
-public_folder: "foto/berita"
-
-collections:
-  - name: "berita"
-    label: "Daftar Berita"
-    folder: "data/berita"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Judul Berita", name: "title", widget: "string" }
-      - { label: "Tanggal Publish", name: "date", widget: "datetime" }
-      - { label: "Kategori", name: "category", widget: "select", options: ["Pemerintahan", "Sosial", "Pembangunan", "Pengumuman"] }
-      - { label: "Ringkasan Pendek", name: "summary", widget: "text" }
-      - { label: "Foto Berita", name: "image", widget: "image" }
-      - { label: "Isi Berita Lengkap", name: "body", widget: "markdown" }
