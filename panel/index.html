@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel Desa</title>
-    <link rel="stylesheet" href="https://unpkg.com/@staticcms/core@^4.0.0/dist/static-cms.css" />
-  </head>
-  <body>
-    <script src="https://unpkg.com/@staticcms/core@^4.0.0/dist/static-cms.js"></script>
-    <script>
-      window.CMS_CONFIG = {
-        config: {
-          backend: {
-            name: 'github',
-            repo: 'pemdes-balobaloang/pemdes-balobaloang',
-            branch: 'main',
-            auth_type: 'implicit',
-            app_id: 'Ov23lij00PeaVlcs6J0P'
-          },
-          media_folder: 'foto/berita',
-          public_folder: '/foto/berita',
-          collections: [
-            {
-              name: 'berita',
-              label: 'Daftar Berita',
-              folder: 'data/berita',
-              create: true,
-              fields: [
-                { label: 'Judul Berita', name: 'title', widget: 'string' },
-                { label: 'Tanggal', name: 'date', widget: 'datetime' },
-                { label: 'Ringkasan', name: 'summary', widget: 'text' },
-                { label: 'Foto Berita', name: 'image', widget: 'image' },
-                { label: 'Isi Berita', name: 'body', widget: 'markdown' }
-              ]
-            }
-          ]
-        }
-      };
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin Panel Desa</title>
+  <link rel="stylesheet" href="https://unpkg.com/@staticcms/core@^4.0.0/dist/static-cms.css" />
+</head>
+<body>
+  <script src="https://unpkg.com/@staticcms/core@^4.0.0/dist/static-cms.js"></script>
+  <script>
+    window.CMS_CONFIG = {
+      config: {
+        backend: { name: 'github', repo: 'pemdes-balobaloang/pemdes-balobaloang', branch: 'main', auth_type: 'implicit', app_id: 'Ov23lij00PeaVlcs6J0P' },
+        media_folder: 'foto/berita',
+        public_folder: '/foto/berita',
+        collections: [
+          {
+            name: 'berita',
+            label: 'Tulis Berita Desa',
+            folder: 'data/berita',
+            create: true,
+            fields: [
+              { label: 'Judul Berita', name: 'title', widget: 'string' },
+              { label: 'Tanggal', name: 'date', widget: 'datetime' },
+              { label: 'Ringkasan', name: 'summary', widget: 'text' },
+              { label: 'Foto Berita', name: 'image', widget: 'image' },
+              { label: 'Isi Berita Lengkap', name: 'body', widget: 'markdown' }
+            ]
+          }
+        ]
+      }
+    };
+  </script>
+</body>
 </html>
