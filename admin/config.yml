@@ -2,8 +2,8 @@ backend:
   name: github
   repo: pemdes-balobaloang/pemdes-balobaloang
   branch: main
-  base_url: https://github.com/login/oauth/authorize
-  auth_endpoint: https://gatekeeper-decap.vercel.app/auth
+  auth_type: implicit
+  app_id: Ov23lij00PeaVlcs6J0P
 
 media_folder: "foto/berita"
 public_folder: "foto/berita"
